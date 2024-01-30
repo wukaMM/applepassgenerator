@@ -316,6 +316,10 @@ class ApplePass(object):
     def add_file(self, name, fd):
         self._files[name] = fd.read()
 
+    # Adds file to the file array
+    def add_file_content(self, name, content):
+        self._files[name] = content
+
     # Creates the actual .pkpass file
     def create(self, certificate, key, wwdr_certificate, password, zip_file=None):
         pass_json = self._create_pass_json()
